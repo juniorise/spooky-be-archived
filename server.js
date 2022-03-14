@@ -1,19 +1,17 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const cors = require('cors')
-const connectDB = require('./config/database')
+import express from 'express'
+import dotenv from 'dotenv'
+import cors from 'cors'
+import connectDB from './config/database.js'
+import routes from './routes/v1/index.js'
 dotenv.config()
 
-connectDB();
+connectDB()
 
 const app = express()
 app.use(cors())
 
-app.get('/', (req, res) => {
-    res.send('API is running....')
-})
+app.use('/v1', routes)
 
-  
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
