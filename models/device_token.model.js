@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import normalize from 'normalize-mongoose'
 
-const device_tokenSchema = mongoose.Schema(
+const deviceTokenSchema = mongoose.Schema(
   {
     version: String,
     build_number: String,
@@ -16,8 +16,8 @@ const device_tokenSchema = mongoose.Schema(
   }
 )
 
-device_tokenSchema.plugin(normalize)
+deviceTokenSchema.plugin(normalize)
 
-const Device_token = mongoose.model('Device_tokens', device_tokenSchema)
+const DeviceToken = mongoose.model('DeviceToken', deviceTokenSchema)
 
-export default Device_token
+export default DeviceToken

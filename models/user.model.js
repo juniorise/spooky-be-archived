@@ -2,14 +2,14 @@ import mongoose from 'mongoose'
 import normalize from 'normalize-mongoose'
 import Product from './product.model.js'
 import Notification from './notification.model.js'
-import Device_token from './device_token.model.js'
+import DeviceToken from './device_token.model.js'
 
-const user_configSchema = mongoose.Schema({
+const userConfigSchema = mongoose.Schema({
   name: String,
   value: String,
 })
 
-const cloud_storageSchema = mongoose.Schema(
+const cloudStorageSchema = mongoose.Schema(
   {
     email: String,
     first_name: String,
@@ -22,15 +22,15 @@ const cloud_storageSchema = mongoose.Schema(
 const userSchema = mongoose.Schema(
   {
     username: { type: String, unique: true },
-    config: [user_configSchema],
+    config: [userConfigSchema],
     nickname: String,
     first_name: String,
     last_name: String,
     profile_url: String,
     credential_ids: [{ type: String }],
     purchased_products: [{ type: mongoose.Types.ObjectId, ref: Product }],
-    cloud_storages: [cloud_storageSchema],
-    device_tokens: [{ type: mongoose.Types.ObjectId, ref: Device_token }],
+    cloud_storages: [cloudStorageSchema],
+    device_tokens: [{ type: mongoose.Types.ObjectId, ref: DeviceToken }],
     notifications: [{ type: mongoose.Types.ObjectId, ref: Notification }],
   },
   {
@@ -43,6 +43,6 @@ const userSchema = mongoose.Schema(
 
 userSchema.plugin(normalize)
 
-const User = mongoose.model('Users', userSchema)
+const User = mongoose.model('User', userSchema)
 
 export default User
