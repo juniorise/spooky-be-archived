@@ -32,6 +32,6 @@ const notificationSchema = mongoose.Schema(
 
 notificationSchema.plugin(normalize)
 
-const Notification = mongoose.model('Notifications', notificationSchema)
+const Notification = mongoose.model('Notification', notificationSchema)
 
 export default Notification
