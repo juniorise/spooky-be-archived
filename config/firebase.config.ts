@@ -1,17 +1,16 @@
 import { initializeApp, cert } from "firebase-admin/app";
+const path = process.env.FIREBASE_SERVICE_ACCOUNT_PATH;
+const serviceAccount = require(path);
 
 async function connect() {
   try {
-    const serviceAccountPath = "./credentials/firebase-adminsdk.json";
-    return await initializeApp({
-      credential: cert(serviceAccountPath),
+    const app = await initializeApp({
+      credential: cert(serviceAccount),
     });
-  } catch (error) {}
+    console.log(`FIREBASE CONNECTED: ${app.name}`);
+  } catch (error) {
+    console.log(`ERROR: ${error}`);
+  }
 }
 
-async function connectLog() {
-  const name = await connect().catch(console.error);
-  console.log(name);
-}
-
-connectLog();
+connect();

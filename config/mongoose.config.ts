@@ -1,7 +1,4 @@
-import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
-
-dotenv.config();
 const mongoURI = process.env.MONGODB_URI;
 
 async function listDatabases(client: MongoClient) {
