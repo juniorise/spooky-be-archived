@@ -3,10 +3,10 @@
   "type": "commonjs",
   "version": "1.0.0",
   "description": "Spooky mobile application API",
-  "main": "dist/app.js",
+  "main": "dist/app/main.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
-    "server": "nodemon dist/app.js",
+    "start": "tsc && node dist/app/main.js",
+    "server": "nodemon dist/app/main.js",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
