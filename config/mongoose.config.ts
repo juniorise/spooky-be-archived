@@ -3,7 +3,8 @@ const mongoURI = process.env.MONGODB_URI;
 
 async function listDatabases(client: MongoClient) {
   const databasesList = await client.db().admin().listDatabases();
-  console.log(databasesList.databases);
+  const dbsStr = databasesList.databases.map((e) => e.name).join(",");
+  console.log(`MONGODB CONNECTED: ${dbsStr}`);
 }
 
 async function connect() {
@@ -12,6 +13,7 @@ async function connect() {
     await client.connect();
     await listDatabases(client);
   } catch (error) {
+    console.log(`ERRRO: ${error}`);
   } finally {
     await client.close();
   }
