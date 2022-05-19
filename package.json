@@ -1,5 +1,6 @@
 {
   "name": "spooky-be",
+  "type": "module",
   "version": "1.0.0",
   "description": "Spooky mobile application API",
   "main": "main.ts",
@@ -25,6 +26,7 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "firebase-admin": "^10.2.0",
     "mongodb": "^4.6.0",
     "nodemon": "^2.0.16"
   }
