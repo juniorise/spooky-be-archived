@@ -1,3 +1,7 @@
+# generated files/dir
 node_modules
+dist
+
+# credentials
 .env
 firebase-adminsdk.json

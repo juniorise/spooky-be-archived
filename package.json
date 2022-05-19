@@ -1,12 +1,12 @@
 {
   "name": "spooky-be",
-  "type": "module",
+  "type":"commonjs",
   "version": "1.0.0",
   "description": "Spooky mobile application API",
-  "main": "main.ts",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node main.ts",
-    "server": "nodemon main.ts",
+    "start": "tsc && node dist/app.js",
+    "server": "nodemon dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,5 +29,10 @@
     "firebase-admin": "^10.2.0",
     "mongodb": "^4.6.0",
     "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "eslint": "^8.15.0",
+    "typescript": "^4.6.4"
   }
 }
